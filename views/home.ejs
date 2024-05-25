@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheet/home.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= title %></h1>
+      <div class="content">
+        <div class="trainers">
+          <h2>Our trainers</h2>
+          <% trainers.forEach(function(trainer) { %>
+          <p><%= trainer.id %></p>
+          <p><%= trainer.name %></p>
+          <p><%= trainer.username %></p>
+          <p><%= trainer.email %></p>
+          <% }); %>
+        </div>
+        <div class="trainer-packages">
+          <h2>Our Training Packages</h2>
+          <% trainingPackages.forEach(function(trainingPackage) { %>
+          <p><%= trainingPackage.id %></p>
+          <p><%= trainingPackage.type %></p>
+          <p><%= trainingPackage.pricePerHour %></p>
+          <p><%= trainingPackage.description %></p>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
