@@ -3,3 +3,24 @@
   padding: 0;
   margin: 0;
 }
+
+body {
+  background-color: aquamarine;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+div.container {
+  width: 80vw;
+  height: 90vh;
+  background-color: rgb(43, 90, 132);
+  margin: 30px auto;
+  padding: 10px;
+  box-shadow: 2px 2px 20px 2px black;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  margin: 10px 0;
+}
