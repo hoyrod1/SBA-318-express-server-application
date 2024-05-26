@@ -51,7 +51,7 @@ app.use((request, response, next) => {
 });
 // Error-handling middleware.
 app.use((error, request, response, next) => {
-  response.status(err.status || 500);
+  response.status(error.status || 500);
   response.json({ errMessage: error.message });
 });
 //-------------------------------------------------------------------------------------------//

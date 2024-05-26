@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgb(214, 214, 214);
+  background-color: rgb(255, 255, 255);
 }
 
 nav {
@@ -16,16 +16,16 @@ nav {
 hr {
   margin-top: 0;
 }
-
 h1 {
+  color: rgb(2, 137, 200);
   text-align: center;
   text-decoration: underline;
   margin: 20px auto;
 }
 
-div.content {
-  display: flex;
-  justify-content: center;
+div.reg-container {
+  width: 75vw;
+  margin: 20px auto;
 }
 
 /*-------------- Footer --------------*/

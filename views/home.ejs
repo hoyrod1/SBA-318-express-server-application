@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
     <link rel="stylesheet" href="/stylesheet/home.css" />
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/register">Register</a></li>
-      </ul>
-    </nav>
+    <!-- Navigation included from the includes directory -->
+    <%- include('./includes/navigation.ejs') %>
+    <!----------------------------------------------------->
+    <hr />
     <div class="container">
       <h1><%= title %></h1>
       <div class="content">
@@ -37,5 +39,9 @@
         </div>
       </div>
     </div>
+    <hr />
+    <!-- Navigation included from the includes directory -->
+    <%- include('./includes/footer.ejs') %>
+    <!----------------------------------------------------->
   </body>
 </html>

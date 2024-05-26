@@ -5,18 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheet/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheet/register.css" />
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/register">Register</a></li>
-      </ul>
-    </nav>
-    <div class="container">
+    <%- include('./includes/navigation.ejs') %>
+    <hr />
+    <div class="reg-container">
       <h1><%= title %></h1>
-      <h1>Create A New User</h1>
+      <h1>Register as a client</h1>
       <form action="/api/users?api-key=perscholas" method="POST">
         <label for="name">
           Name: <input type="text" id="name" name="name" />
@@ -33,5 +33,9 @@
         <input type="submit" value="Create User" />
       </form>
     </div>
+    <hr />
+    <!-- Navigation included from the includes directory -->
+    <%- include('./includes/footer.ejs') %>
+    <!----------------------------------------------------->
   </body>
 </html>
