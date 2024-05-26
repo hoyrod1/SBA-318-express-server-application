@@ -22,7 +22,9 @@ app.use(express.json());
  * Middleware
  */
 const logReq = (request, response, next) => {
-  console.log(`${request.method} was made to ${request.url}!!!`);
+  console.log(
+    `${request.method} was made to ${request.url} from the hostname: ${request.hostname}!!!`
+  );
   console.log("Request received!!!");
   next();
 };
@@ -47,6 +49,9 @@ app.use("/home", indexRouter);
 //-------------------------------------------------------------------------------------------//
 // 404 Middleware
 app.use((request, response, next) => {
+  response.render("404", {
+    title: "404 Opps page not found!!!",
+  });
   next(error(404, `Resource not found`));
 });
 // Error-handling middleware.
