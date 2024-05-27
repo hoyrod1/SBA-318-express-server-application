@@ -17,7 +17,7 @@
     <div class="reg-container">
       <h1><%= title %></h1>
       <h1>Register as a client</h1>
-      <form action="/api/users?api-key=perscholas" method="POST">
+      <form action="/members" method="POST">
         <label for="name">
           Name: <input type="text" id="name" name="name" />
         </label>
@@ -34,7 +34,7 @@
       </form>
     </div>
     <hr />
-    <!-- Navigation included from the includes directory -->
+    <!-- Footer included from the includes directory -->
     <%- include('./includes/footer.ejs') %>
     <!----------------------------------------------------->
   </body>

@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* body {
+  background-color: rgb(214, 214, 214);
+} */
+
+nav {
+  background-color: aliceblue;
+  padding-left: 10px;
+}
+
+hr {
+  margin-top: 0;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  margin: 20px auto;
+}
+
+div.content {
+  display: flex;
+  justify-content: center;
+}
+
+/*-------------- Footer --------------*/
+
+footer {
+  background-color: aliceblue;
+  text-align: center;
+  margin: 10px auto;
+  transition: 1s;
+}
+
+footer:hover {
+  color: rgb(2, 137, 200);
+}
+
+/* -----------------------------------*/
