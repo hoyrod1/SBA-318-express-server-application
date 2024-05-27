@@ -24,13 +24,6 @@ router.get("/", (req, res) => {
 //===========================================================================================//
 // home page displays available trainers and traning packages
 router.get("/home", (req, res) => {
-  // const links = [
-  //   {
-  //     href: "users/:id",
-  //     rel: ":id",
-  //     type: "GET",
-  //   },
-  // ];
   res.render("home", {
     title: "Welcome to the home page",
     trainers: trainers,
@@ -50,20 +43,40 @@ router.get("/register", (req, res) => {
 
 //===========================================================================================//
 // Register a new member
-router.post("/members", (req, res) => {
-  // const addedMember = members.push(req.body);
-  console.log(req.body);
+router.get("/members", (req, res) => {
+  // const links = [
+  //   {
+  //     href: "users/:id",
+  //     rel: ":id",
+  //     type: "GET",
+  //   },
+  // ];
+  res.render("members", {
+    title: "Welcome To The Members Page",
+    test: "Test Data",
+    members: members,
+  });
 });
 //===========================================================================================//
 
 //===========================================================================================//
 // Register a new member
-router.get("/members", (req, res) => {
+router.post("/members", (req, res, next) => {
   // const addedMember = members.push(req.body);
-  res.render("members", {
-    title: "Welcome To The Members Page",
-    members: members,
-  });
+  if (req.body.name && req.body.username && req.body.email) {
+    const newMemeber = {
+      id: members[members.length - 1].id + 1,
+      name: req.body.name,
+      username: req.body.username,
+      email: req.body.email,
+    };
+    members.push(newMemeber);
+    res.render("members", {
+      title: "Welcome To The Members Page",
+      members: members,
+    });
+  } else next(error(400, "Insufficient Data"));
+  console.log(req.body);
 });
 //===========================================================================================//
 

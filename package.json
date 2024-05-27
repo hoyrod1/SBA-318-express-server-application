@@ -19,6 +19,7 @@
   "homepage": "https://github.com/hoyrod1/SBA-318-express-server-application#readme",
   "dependencies": {
     "ejs": "^3.1.10",
+    "ejs-lint": "^2.0.0",
     "express": "^4.19.2",
     "nodemon": "^3.1.0"
   }
