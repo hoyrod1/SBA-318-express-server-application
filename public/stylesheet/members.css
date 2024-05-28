@@ -21,7 +21,8 @@ hr {
   margin-top: 0;
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
   text-decoration: underline;
   margin: 20px auto;
@@ -35,8 +36,12 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  padding: 4px;
-  border: 2px solid rgb(221, 223, 223);
+}
+
+.member-container {
+  padding: 15px;
+  box-shadow: 1px 1px 10px 2px rgb(121, 120, 120);
+  margin: 20px 0;
 }
 
 .update-del {
