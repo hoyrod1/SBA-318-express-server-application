@@ -69,27 +69,44 @@ router.get("/members", (req, res) => {
   });
 });
 //-------------------------------------------------------------------------------------------//
-// Delete a single member
-router.delete("/members/:id", (req, res) => {
-  // const memberInfo = members.find((member, i) => {
-  //   if (member.id == req.params.id) {
-  //     members.splice(i, 1);
-  //     return true;
-  //   }
-  // });
-  res.render("members", {
-    title: "Welcome To The Members New Page",
-    members: members,
+// Update a single member
+router.patch("/members/:id", (req, res) => {
+  const memberInfo = members.find((member, i) => {
+    if (member.id == req.params.id) {
+      for (const key in req.body) {
+        memberInfo[i][key] = req.body[key];
+      }
+      return true;
+    }
   });
 
-  // if (memberInfo) {
-  //   res.render("members", {
-  //     title: "Welcome To The Members New Page",
-  //     members: members,
-  //   });
-  // } else {
-  //   next();
-  // }
+  if (memberInfo) {
+    res.render("members", {
+      title: "Welcome To The Members Updated Page",
+      members: members,
+    });
+  } else {
+    next();
+  }
+});
+//-------------------------------------------------------------------------------------------//
+// Delete a single member
+router.delete("/members/:id", (req, res) => {
+  const memberInfo = members.find((member, i) => {
+    if (member.id == req.params.id) {
+      members.splice(i, 1);
+      return true;
+    }
+  });
+
+  if (memberInfo) {
+    res.render("members", {
+      title: "Welcome To The Members New Page",
+      members: members,
+    });
+  } else {
+    next();
+  }
 });
 //===========================================================================================//
 
