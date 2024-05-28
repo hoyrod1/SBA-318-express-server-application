@@ -1,12 +1,14 @@
+const express = require("express");
 const { error } = require("console");
 const { response } = require("express");
 const bodyParser = require("body-parser");
-const express = require("express");
+const methodOverride = require("method-override");
 const { request } = require("http");
 const indexRouter = require("./routes/index.js");
 // const homeRouter = require("./routes/home.js");
 const app = express();
 const port = 8080;
+app.use(methodOverride("_method"));
 //===========================================================================================//
 
 //===========================================================================================//

@@ -38,6 +38,13 @@ h1 {
   padding: 4px;
   border: 2px solid rgb(221, 223, 223);
 }
+
+.update-del {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  cursor: pointer;
+}
 /*-------------- Footer --------------*/
 
 footer {

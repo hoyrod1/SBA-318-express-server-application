@@ -23,12 +23,16 @@
           <h2><%= member.name %> <%= member.id %></h2>
           <p><%= member.username %></p>
           <p><%= member.email %></p>
-          <a class="deleteMem" data-doc="<%= member.id %>">Delete</a>
-          <!-- <button type="submit" class="deleteMem" data-doc="<%= member.id %>">
-            Delete
-          </button> -->
-
-          <a class="updateMem" data-doc="<%= member.id %>"> Update </a>
+          <div class="update-del">
+            <!-- <a class="deleteMem" data-doc="<%= member.id %>">Delete</a> -->
+            <form
+              method="POST"
+              action="/members/<%= member.id %>?_method=DELETE"
+            >
+              <button type="submit">Delete</button>
+            </form>
+            <a class="updateMem" data-doc="<%= member.id %>"> Update </a>
+          </div>
         </div>
         <% }); %>
       </div>
@@ -38,21 +42,21 @@
     <%- include('./includes/footer.ejs') %>
     <!------------------------------------------------->
     <script>
-      const deleteMem = document.querySelector("a.deleteMem");
-      console.log(deleteMem);
-      // console.log(deleteMem.dataset.doc);
-      deleteMem.addEventListener("click", async (e) => {
-        console.log(deleteMem.dataset.doc);
-        console.log(e);
-        // const memberResource = `/members/${deleteMem.dataset.doc}`;
-        // fetch(memberResource, {
-        //   method: "DELETE",
-        // })
-        //   .then(() => {})
-        //   .catch((err) => {
-        //     console.log(err);
-        //   });
-      });
+      // const deleteMem = document.querySelector("a.deleteMem");
+      // console.log(deleteMem);
+      // // console.log(deleteMem.dataset.doc);
+      // deleteMem.addEventListener("click", async (e) => {
+      //   console.log(deleteMem.dataset.doc);
+      //   console.log(e);
+      //   // const memberResource = `/members/${deleteMem.dataset.doc}`;
+      //   // fetch(memberResource, {
+      //   //   method: "DELETE",
+      //   // })
+      //   //   .then(() => {})
+      //   //   .catch((err) => {
+      //   //     console.log(err);
+      //   //   });
+      // });
     </script>
   </body>
 </html>
