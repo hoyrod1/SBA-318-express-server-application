@@ -42,6 +42,18 @@ router.get("/trainer/:id", (req, res) => {
     trainerInfo: trainerInfo,
   });
 });
+//-------------------------------------------------------------------------------------------//
+// Get the information for a single training package
+router.get("/training-package/:id", (req, res) => {
+  const trainingPackageInfo = trainingPackages.find(
+    (trainingPackage) => trainingPackage.id == req.params.id
+  );
+  console.log(req.params.id);
+  res.render("training-package", {
+    title: "Welcome To The Training Package Page",
+    trainingPackageInfo: trainingPackageInfo,
+  });
+});
 //===========================================================================================//
 
 //===========================================================================================//
