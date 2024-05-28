@@ -17,17 +17,49 @@ hr {
   margin-top: 0;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   text-align: center;
   text-decoration: underline;
   margin: 20px auto;
 }
 
-div.content {
-  display: flex;
-  justify-content: center;
+p {
+  text-align: center;
 }
 
+div.content {
+  display: flex;
+  align-content: space-between;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 45px;
+}
+
+.trainers {
+  display: flex;
+  gap: 5px;
+}
+
+.trainer {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 2px solid rgb(221, 223, 223);
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 1px 1px 10px 2px rgb(121, 120, 120);
+}
+
+.training-packages {
+  padding: 0 0 10px 0;
+  background-color: rgb(221, 223, 223);
+  padding: 10px;
+  border-radius: 5px;
+}
 /*-------------- Footer --------------*/
 
 footer {

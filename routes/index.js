@@ -25,9 +25,21 @@ router.get("/", (req, res) => {
 // home page displays available trainers and traning packages
 router.get("/home", (req, res) => {
   res.render("home", {
-    title: "Welcome to the home page",
+    title: "Welcome To The Home Page",
     trainers: trainers,
     trainingPackages: trainingPackages,
+  });
+});
+//===========================================================================================//
+
+//===========================================================================================//
+// Get the information for a single trainer
+router.get("/trainer/:id", (req, res) => {
+  const trainerInfo = trainers.find((trainer) => trainer.id == req.params.id);
+  console.log(req.params.id);
+  res.render("trainer", {
+    title: "Welcome To The Trainers Page",
+    trainerInfo: trainerInfo,
   });
 });
 //===========================================================================================//
@@ -53,9 +65,31 @@ router.get("/members", (req, res) => {
   // ];
   res.render("members", {
     title: "Welcome To The Members Page",
-    test: "Test Data",
     members: members,
   });
+});
+//-------------------------------------------------------------------------------------------//
+// Delete a single member
+router.delete("/members/:id", (req, res) => {
+  // const memberInfo = members.find((member, i) => {
+  //   if (member.id == req.params.id) {
+  //     members.splice(i, 1);
+  //     return true;
+  //   }
+  // });
+  res.render("members", {
+    title: "Welcome To The Members New Page",
+    members: members,
+  });
+
+  // if (memberInfo) {
+  //   res.render("members", {
+  //     title: "Welcome To The Members New Page",
+  //     members: members,
+  //   });
+  // } else {
+  //   next();
+  // }
 });
 //===========================================================================================//
 
@@ -78,6 +112,29 @@ router.post("/members", (req, res, next) => {
   } else next(error(400, "Insufficient Data"));
   console.log(req.body);
 });
+//===========================================================================================//
+
+//===========================================================================================//
+
+//===========================================================================================//
+// Register a new member
+// router.patch("/trainer/:id", (req, res, next) => {
+//   // const addedMember = members.push(req.body);
+//   if (req.body.name && req.body.username && req.body.email) {
+//     const newMemeber = {
+//       id: members[members.length - 1].id + 1,
+//       name: req.body.name,
+//       username: req.body.username,
+//       email: req.body.email,
+//     };
+//     members.push(newMemeber);
+//     res.render("members", {
+//       title: "Welcome To The Members Page",
+//       members: members,
+//     });
+//   } else next(error(400, "Insufficient Data"));
+//   console.log(req.body);
+// });
 //===========================================================================================//
 
 //===========================================================================================//

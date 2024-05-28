@@ -23,20 +23,18 @@
           <h2><%= member.name %> <%= member.id %></h2>
           <p><%= member.username %></p>
           <p><%= member.email %></p>
-          <form action="/members" method="POST">
-            <input
-              id="update"
-              type="button"
-              name="<%= member.id %>"
-              value="Update"
-            />
-            <input
-              id="delete"
-              type="button"
-              name="<%= member.id %>"
-              value="Delete"
-            />
-          </form>
+          <!-- <a class="deleteMem" data-doc="<%= member.id %>">Delete</a> -->
+          <button type="submit" class="deleteMem" data-doc="<%= member.id %>">
+            Delete
+          </button>
+
+          <a
+            class="updateMem"
+            data-doc="<%= member.id %>"
+            onclick="deleteMember()"
+          >
+            Update
+          </a>
         </div>
         <% }); %>
       </div>
@@ -45,5 +43,23 @@
     <!-- Footer included from the includes directory -->
     <%- include('./includes/footer.ejs') %>
     <!------------------------------------------------->
+    <script>
+      const deleteMem = document.querySelector(".deleteMem");
+      // console.log(deleteMem.dataset.doc);
+      // console.log(deleteMem.dataset.doc);
+      // deleteMem.addEventListener("click", deleteMember);
+
+      function deleteMember(e) {
+        console.log("Testng");
+        // const memberResource = `/members/${deleteMem.dataset.doc}`;
+        // fetch(memberResource, {
+        //   method: "DELETE",
+        // })
+        //   .then(() => {})
+        //   .catch((err) => {
+        //     console.log(err);
+        //   });
+      }
+    </script>
   </body>
 </html>

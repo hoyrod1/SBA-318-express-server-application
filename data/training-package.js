@@ -1,7 +1,7 @@
 const trainingPackage = [
   {
     id: 1,
-    type: "resistance",
+    type: "resistance-training",
     pricePerHour: "$100",
     description:
       "The use of Free weights, resistance bands and the use of body wight",

@@ -18,23 +18,33 @@
     <hr />
     <div class="container">
       <h1><%= title %></h1>
+      <hr />
       <div class="content">
-        <div class="trainers">
-          <h2>Our trainers</h2>
-          <% trainers.forEach(function(trainer) { %>
-          <p><%= trainer.id %></p>
-          <p><%= trainer.name %></p>
-          <p><%= trainer.username %></p>
-          <p><%= trainer.email %></p>
-          <% }); %>
+        <div class="trainer-container">
+          <h2>Select one of our trainers</h2>
+          <div class="trainers">
+            <% trainers.forEach(function(trainer) { %>
+            <div class="trainer">
+              <h3><%= trainer.name %></h3>
+              <p><%= trainer.username %></p>
+              <p><%= trainer.email %></p>
+              <a href="/trainer/<%= trainer.id %>">
+                <button type="submit">Get More Info</button>
+              </a>
+            </div>
+            <% }); %>
+          </div>
+          <hr />
         </div>
-        <div class="trainer-packages">
+        <div class="training-packages">
           <h2>Our Training Packages</h2>
           <% trainingPackages.forEach(function(trainingPackage) { %>
-          <p><%= trainingPackage.id %></p>
-          <p><%= trainingPackage.type %></p>
+          <h3><%= trainingPackage.type %></h3>
           <p><%= trainingPackage.pricePerHour %></p>
           <p><%= trainingPackage.description %></p>
+          <a href="training-package/<%= trainingPackage.id %>">
+            <button type="submit">Get More Info</button>
+          </a>
           <% }); %>
         </div>
       </div>
