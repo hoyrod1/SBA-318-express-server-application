@@ -34,18 +34,21 @@
             </div>
             <% }); %>
           </div>
-          <hr />
         </div>
-        <div class="training-packages">
+        <div class="training-package-container">
           <h2>Our Training Packages</h2>
-          <% trainingPackages.forEach(function(trainingPackage) { %>
-          <h3><%= trainingPackage.type %></h3>
-          <p><%= trainingPackage.pricePerHour %></p>
-          <p><%= trainingPackage.description %></p>
-          <a href="training-package/<%= trainingPackage.id %>">
-            <button type="submit">Get More Info</button>
-          </a>
-          <% }); %>
+          <div class="training-packages">
+            <% trainingPackages.forEach(function(trainingPackage) { %>
+            <div class="training-package">
+              <h3><%= trainingPackage.type %></h3>
+              <p><%= trainingPackage.pricePerHour %></p>
+              <p><%= trainingPackage.description %></p>
+              <a href="training-package/<%= trainingPackage.id %>">
+                <button type="submit">Get More Info</button>
+              </a>
+            </div>
+            <% }); %>
+          </div>
         </div>
       </div>
     </div>

@@ -38,12 +38,14 @@ div.content {
   gap: 45px;
 }
 
-.trainers {
+.trainers,
+.training-packages {
   display: flex;
   gap: 5px;
 }
 
-.trainer {
+.trainer,
+.training-package {
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -56,7 +58,6 @@ div.content {
 
 .training-packages {
   padding: 0 0 10px 0;
-  background-color: rgb(221, 223, 223);
   padding: 10px;
   border-radius: 5px;
 }
