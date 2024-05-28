@@ -89,14 +89,12 @@ router.put("/member/:id", (req, res) => {
       return true;
     }
   });
-  console.log(memberInfo);
-  res.redirect("/members");
 
-  // if (memberInfo) {
-  //   res.redirect("/members");
-  // } else {
-  //   next();
-  // }
+  if (memberInfo) {
+    res.redirect("/members");
+  } else {
+    next();
+  }
 });
 //-------------------------------------------------------------------------------------------//
 // Delete a single member
