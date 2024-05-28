@@ -152,27 +152,4 @@ router.post("/members", (req, res, next) => {
 //===========================================================================================//
 
 //===========================================================================================//
-
-//===========================================================================================//
-// Register a new member
-// router.patch("/trainer/:id", (req, res, next) => {
-//   // const addedMember = members.push(req.body);
-//   if (req.body.name && req.body.username && req.body.email) {
-//     const newMemeber = {
-//       id: members[members.length - 1].id + 1,
-//       name: req.body.name,
-//       username: req.body.username,
-//       email: req.body.email,
-//     };
-//     members.push(newMemeber);
-//     res.render("members", {
-//       title: "Welcome To The Members Page",
-//       members: members,
-//     });
-//   } else next(error(400, "Insufficient Data"));
-//   console.log(req.body);
-// });
-//===========================================================================================//
-
-//===========================================================================================//
 module.exports = router;
