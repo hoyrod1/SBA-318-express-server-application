@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheet/register.css" />
+  </head>
+  <body>
+    <%- include('./includes/navigation.ejs') %>
+    <hr />
+    <div class="reg-container">
+      <h1><%= title %></h1>
+      <h2>Update you account info</h2>
+      <form method="POST" action="/member/<%= memberInfo.id %>?_method=PUT">
+        <label for="name">
+          Name:
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value="<%= memberInfo.name %>"
+          />
+        </label>
+        <br />
+        <label for="username">
+          Username:
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value="<%= memberInfo.username %>"
+          />
+        </label>
+        <br />
+        <label for="email">
+          Email:
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value="<%= memberInfo.email %>"
+          />
+        </label>
+        <br />
+        <input type="submit" value="Update Your Information" />
+      </form>
+    </div>
+    <hr />
+    <!-- Footer included from the includes directory -->
+    <%- include('./includes/footer.ejs') %>
+    <!----------------------------------------------------->
+  </body>
+</html>

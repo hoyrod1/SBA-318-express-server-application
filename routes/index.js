@@ -54,7 +54,7 @@ router.get("/register", (req, res) => {
 //===========================================================================================//
 
 //===========================================================================================//
-// Register a new member
+// Show all registered member
 router.get("/members", (req, res) => {
   // const links = [
   //   {
@@ -69,25 +69,34 @@ router.get("/members", (req, res) => {
   });
 });
 //-------------------------------------------------------------------------------------------//
+// Get a single member
+router.get("/member/:id/edit", (req, res) => {
+  const memberInfo = members.find((member) => member.id == req.params.id);
+  console.log(req.params.id);
+  res.render("member", {
+    title: "Welcome To The Your Member Page",
+    memberInfo: memberInfo,
+  });
+});
+//-------------------------------------------------------------------------------------------//
 // Update a single member
-router.patch("/members/:id", (req, res) => {
+router.put("/member/:id", (req, res) => {
   const memberInfo = members.find((member, i) => {
     if (member.id == req.params.id) {
       for (const key in req.body) {
-        memberInfo[i][key] = req.body[key];
+        members[i][key] = req.body[key];
       }
       return true;
     }
   });
+  console.log(memberInfo);
+  res.redirect("/members");
 
-  if (memberInfo) {
-    res.render("members", {
-      title: "Welcome To The Members Updated Page",
-      members: members,
-    });
-  } else {
-    next();
-  }
+  // if (memberInfo) {
+  //   res.redirect("/members");
+  // } else {
+  //   next();
+  // }
 });
 //-------------------------------------------------------------------------------------------//
 // Delete a single member
