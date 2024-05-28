@@ -100,10 +100,11 @@ router.delete("/members/:id", (req, res) => {
   });
 
   if (memberInfo) {
-    res.render("members", {
-      title: "Welcome To The Members New Page",
-      members: members,
-    });
+    res.redirect("/members");
+    // res.render("members", {
+    //   title: "Welcome To The Members New Page",
+    //   members: members,
+    // });
   } else {
     next();
   }
