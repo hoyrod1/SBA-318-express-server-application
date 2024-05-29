@@ -25,7 +25,7 @@
           <div class="trainers">
             <% trainers.forEach(function(trainer) { %>
             <div class="trainer">
-              <h3><%= trainer.name %></h3>
+              <h4><%= trainer.name %></h4>
               <p><%= trainer.username %></p>
               <p><%= trainer.email %></p>
               <a href="/trainer/<%= trainer.id %>">
@@ -40,7 +40,7 @@
           <div class="training-packages">
             <% trainingPackages.forEach(function(trainingPackage) { %>
             <div class="training-package">
-              <h3><%= trainingPackage.type %></h3>
+              <h4><%= trainingPackage.type %></h4>
               <p><%= trainingPackage.pricePerHour %></p>
               <p><%= trainingPackage.description %></p>
               <a href="training-package/<%= trainingPackage.id %>">

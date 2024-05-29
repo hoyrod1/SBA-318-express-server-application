@@ -25,7 +25,7 @@ const trainingPackage = [
     type: "combination-training",
     pricePerHour: "$200",
     description:
-      "The combination training regiment includes resistance training, cardio training and stretching",
+      "This training regiment includes resistance training, cardio training and stretching",
   },
 ];
 
