@@ -16,7 +16,7 @@ const members = require("../data/members");
 router.get("/", (req, res) => {
   res.render("index", {
     title: "Welcome to the Fitness SBA Express Server Application",
-    url: "./views/home.ejs",
+    url: "/home",
   });
 });
 //===========================================================================================//
